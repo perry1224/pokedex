@@ -5,13 +5,13 @@ let pokemonList = [
 {name: "charmander", type: ["fire"], height: "9"}
 ];
 
-for (let i=0; i<=pokemonList.length; i++) {
+for (let i=0; i<pokemonList.length; i++) {
 if (pokemonList[i].height > 7) {
     
 
-    document.write(pokemonList[i].name +' ' + pokemonList[i].type + '(height:' + pokemonList[i].height + ')' + 'Wow you are tall!' + '<BR>');
+    document.write(pokemonList[i].name + '  '  + '(type:' + pokemonList[i].type + ') ' +  '(height:' + pokemonList[i].height + ')' + 'Wow you are tall!' + '<BR>');
 } else {
-    document.write(pokemonList[i].name + ' ' + pokemonList[i].type + '(height:' + pokemonList[i].height + ')'  + '<BR>');
+    document.write(pokemonList[i].name + '  ' + '(type:' + pokemonList[i].type + ') ' + '(height:' + pokemonList[i].height + ')'  + '<BR>');
 }
 
 
