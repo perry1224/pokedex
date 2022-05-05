@@ -14,6 +14,7 @@ let pokemonRepository= (function() {
     }
 
     add({pokemon: "Pikachu", type:["electric", "normal"], height: "6"},)
+    add({pokemon: "Gyarados", type:["water", "dragon"], height: "100"},)
 
     return {
         getAll: getAll,
