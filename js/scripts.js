@@ -1,7 +1,6 @@
 let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-    let modalContainer = document.querySelector('#modal-container');
   
     function add(pokemon) {
       if (
@@ -69,6 +68,8 @@ let pokemonRepository = (function () {
       
     }
   
+//Modal exercise 
+let modalContainer = document.querySelector('#modal-container');
     function showModal(pokemon) {
         modalContainer.innerHtml = ' ';
 
@@ -84,16 +85,14 @@ let pokemonRepository = (function () {
         titleElement.classList.add('pokemon-title-name');
 		titleElement.innerText = pokemon.name.toUpperCase();
 
-    
+        let contentElement = document.createElement('p');
+        contentElement.classList.add('pokemon-content-height');
+        contentElement.innerHTML = `Height: ${pokemon.height}<br>Types: ${typesString}`;
 
-    let contentElement = document.createElement('p');
-    contentElement.classList.add('pokemon-content-height');
-    contentElement.innerHTML = `Height: ${pokemon.height}<br>Types: ${typesString}`;
-
-    let imgElement = document.createElement('img');
-    imgElement.src = pokemon.imageUrl;
-    imgElement.setAttribute('src', pokemon.imageUrl);
-    imgElement.setAttribute('alt', pokemon.name + ' image');
+        let imgElement = document.createElement('img');
+        imgElement.src = pokemon.imageUrl;
+        imgElement.setAttribute('src', pokemon.imageUrl);
+        imgElement.setAttribute('alt', pokemon.name + ' image');
 
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
@@ -101,6 +100,7 @@ let pokemonRepository = (function () {
     modal.appendChild(imgElement);
     modalContainer.appendChild(modal);
 
+    
     modalContainer.classList.add('is-visible');
 }
 
@@ -127,9 +127,8 @@ modalContainer.addEventListener('click', (e) => {
       addListItem: addListItem,
       loadList: loadList,
       loadDetails: loadDetails,
-      showDetails: showDetails
     };
-  
+})();
   
   
   pokemonRepository.loadList().then(function () {
@@ -139,4 +138,3 @@ modalContainer.addEventListener('click', (e) => {
   });
   
   
-});

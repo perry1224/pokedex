@@ -1,4 +1,4 @@
-/*body {
+body {
 
 background-color: rgba(165, 165, 235, 0.761);
 
@@ -6,7 +6,7 @@ background-color: rgba(165, 165, 235, 0.761);
 
 .button-class {
     background-color: #2f4cdc; /* Green */
-  /* border: none;
+   border: none;
     color: white;
     padding: 16px 32px;
     text-align: center;
@@ -15,17 +15,17 @@ background-color: rgba(165, 165, 235, 0.761);
     font-size: 16px;
     margin: 4px 2px;
     -webkit-transition-duration: 0.4s; /* Safari */
-   /*transition-duration: 0.4s;
+   transition-duration: 0.4s;
     cursor: pointer;
     background-color: white;
     color: black;
     border: 2px solid #4caf50;
   } 
 
- /* .button-class:hover {
+  .button-class:hover {
       background-color: #b69ee8;
       color: white;
-  } */
+  } 
 
   #modal-container {
   display: none;
