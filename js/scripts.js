@@ -71,7 +71,7 @@ let pokemonRepository = (function () {
 //Modal exercise 
 let modalContainer = document.querySelector('#modal-container');
     function showModal(pokemon) {
-        modalContainer.innerHtml = ' ';
+        modalContainer.innerHTML = ' ';
 
         let modal = document.createElement('div');
         modal.classList.add('modal');
@@ -87,7 +87,7 @@ let modalContainer = document.querySelector('#modal-container');
 
         let contentElement = document.createElement('p');
         contentElement.classList.add('pokemon-content-height');
-        contentElement.innerHTML = 'Height: ${pokemon.height}';
+        contentElement.innerHTML = `Height: ${pokemon.height}`;
 
         let imgElement = document.createElement('img');
         imgElement.src = pokemon.imageUrl;
