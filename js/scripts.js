@@ -87,7 +87,7 @@ let modalContainer = document.querySelector('#modal-container');
 
         let contentElement = document.createElement('p');
         contentElement.classList.add('pokemon-content-height');
-        contentElement.innerHTML = `Height: ${pokemon.height}<br>Types: ${typesString}`;
+        contentElement.innerHTML = 'Height: ${pokemon.height}';
 
         let imgElement = document.createElement('img');
         imgElement.src = pokemon.imageUrl;
