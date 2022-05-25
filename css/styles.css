@@ -59,7 +59,7 @@ background-color: rgba(165, 165, 235, 0.761);
   text-align: center;
 }
 
-.modal {
+/*.modal {
     margin: auto;
     display: inline-block;
     box-sizing: border-box;
@@ -93,5 +93,5 @@ background-color: rgba(165, 165, 235, 0.761);
   
   #modal-container.is-visible {
     /* CSS for modal container - add your own desired CSS styles here */
-    display: block;
+  /*  display: block;
   }
