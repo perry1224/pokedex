@@ -23,6 +23,8 @@ let modalContainer = document.querySelector('#modal-container');
       let button = document.createElement("button");
       button.innerText = pokemon.name;
       button.classList.add("button-class");
+      button.setAttribute("data-toggle", "modal")
+      button.setAttribute("data-target", "#modal")
       listpokemon.appendChild(button);
       pokemonList.appendChild(listpokemon);
       button.addEventListener("click", function(event) {
@@ -55,7 +57,9 @@ let modalContainer = document.querySelector('#modal-container');
         // Now we add the details to the item
         item.imageUrl = details.sprites.front_default;
         item.height = details.height;
+        item.weight = details.weight;
         item.types = details.types;
+        item.abilities = details.abilities;
       }).catch(function (e) {
         console.error(e);
       });
@@ -102,37 +106,14 @@ let modalContainer = document.querySelector('#modal-container');
       let abilitiesElement = $("<p>" + "abilities : " + pokemon.abilities + "</p>");
 
     modalTitle.append(nameElement);
-    modalBody.append(imgageElementFront);
+    modalBody.append(imageElementFront);
     modalBody.append(imageElementBack);
     modalBody.append(heightElement);
     modalBody.append(weightElement);
     modalBody.append(typesElement);
     modalBody.append(abilitiesElement);
    
-
-    
-    modalContainer.classList.add('is-visible');
-}
-
-function hideModal() {
-      modalContainer.classList.remove('is-visible');
-}
-
-
-
-
-window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-        hideModal();
     }
-});
-
-modalContainer.addEventListener('click', (e) => {
-    let target = e.target;
-    if (target === modalContainer) {
-        hideModal();
-    }
-});
 
     return {
       add: add,
@@ -141,8 +122,8 @@ modalContainer.addEventListener('click', (e) => {
       loadList: loadList,
       loadDetails: loadDetails,
       
-    };
-})();
+    
+};
   
   
   pokemonRepository.loadList().then(function () {
@@ -151,4 +132,4 @@ modalContainer.addEventListener('click', (e) => {
     });
   });
   
-  
+})
