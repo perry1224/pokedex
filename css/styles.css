@@ -1,9 +1,16 @@
+
 body {
 
 background-color: rgba(165, 165, 235, 0.761);
 
 }
 
+.img {
+  width: 70px;
+  height: 70px;
+ margin-left: auto;
+
+}
 .button-class {
     background-color: #2f4cdc; /* Green */
    border: none;
