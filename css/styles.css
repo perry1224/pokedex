@@ -13,30 +13,34 @@ background-color: rgba(165, 165, 235, 0.761);
 }
 .button-class {
     background-color: #2f4cdc; /* Green */
-   border: none;
+   border:auto;
     color: white;
     padding: 16px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 4px 500px;
     -webkit-transition-duration: 0.4s; /* Safari */
    transition-duration: 0.4s;
     cursor: pointer;
     background-color: white;
     color: black;
     border: 2px solid #4caf50;
+   
   } 
+
+  ul
+  {
+  list-style-type: none;
+  }
 
   .button-class:hover {
       background-color: #b69ee8;
       color: white;
   } 
 
-  #modal-container {
-  display: none;
-}
+
 
 #modal-container.is-visible {
 	position: fixed;
@@ -48,6 +52,7 @@ background-color: rgba(165, 165, 235, 0.761);
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   
+  
   /* to show it above other content */
   z-index: 999; 
   
@@ -57,8 +62,13 @@ background-color: rgba(165, 165, 235, 0.761);
   /* this is used to center the modal */
   display: grid;
   text-align: center;
+  
 }
 
+
+#modal .modal-title {
+  text-transform: capitalize;
+}
 /*.modal {
     margin: auto;
     display: inline-block;

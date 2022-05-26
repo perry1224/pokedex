@@ -55,7 +55,8 @@ let modalContainer = document.querySelector('#modal-container');
         return response.json();
       }).then(function (details) {
         // Now we add the details to the item
-        item.imageUrl = details.sprites.front_default;
+        item.imageUrlFront = details.sprites.front_default;
+        item.imageUrlBack = details.sprites.back_default;
         item.height = details.height;
         item.weight = details.weight;
         item.types = details.types;
@@ -100,10 +101,23 @@ let modalContainer = document.querySelector('#modal-container');
       let weightElement = $("<p>" + "weight : " + pokemon.weight + "</p>");
 
       // // creating element for type in modal content
-      let typesElement = $("<p>" + "types : " + pokemon.types + "</p>");
+const xs = [];
+for (let i = 0; i < pokemon.types.length; i++) {
+  xs.push(pokemon.types[i].type.name);
+}
+const types = xs.join(" - ");      
+
+      let typesElement = $("<p>" + "types : " + types + "</p>");
 
       // // creating element for abilities in modal content
-      let abilitiesElement = $("<p>" + "abilities : " + pokemon.abilities + "</p>");
+  
+      const xz = [];
+      for (let i = 0; i < pokemon.abilities.length; i++) {
+        xz.push(pokemon.abilities[i].ability.name);
+      }
+      const abilities = xz.join(" - ");      
+      
+      let abilitiesElement = $("<p>" + "abilities : " + abilities + "</p>");
 
     modalTitle.append(nameElement);
     modalBody.append(imageElementFront);
@@ -121,9 +135,9 @@ let modalContainer = document.querySelector('#modal-container');
       addListItem: addListItem,
       loadList: loadList,
       loadDetails: loadDetails,
-      
+    }
     
-};
+})();
   
   
   pokemonRepository.loadList().then(function () {
@@ -131,5 +145,3 @@ let modalContainer = document.querySelector('#modal-container');
       pokemonRepository.addListItem(pokemon);
     });
   });
-  
-})
