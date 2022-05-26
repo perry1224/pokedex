@@ -1,7 +1,7 @@
 let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-
+let modalContainer = document.querySelector('#modal-container');
 let input = $('input');
 input.on('input', filterList);  
   
@@ -82,7 +82,7 @@ input.on('input', filterList);
       list.each(function () {
         let item = $(this);
         let name = item.text();
-        if (name.startsWith(inputValue)) {
+        if (name.startsWith(inputValue.toLowerCase())) {
           item.show();
         } else {
           item.hide();

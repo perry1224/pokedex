@@ -30,7 +30,7 @@ background-color: rgba(165, 165, 235, 0.761);
    
   } 
 
-  ul
+  ul 
   {
   list-style-type: none;
   }
@@ -40,10 +40,6 @@ background-color: rgba(165, 165, 235, 0.761);
       color: white;
   } 
 
-#pokemon-list {
-  display: grid;
-  column-gap: 50px;
-}
 
 #modal-container.is-visible {
 	position: fixed;
