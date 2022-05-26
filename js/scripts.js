@@ -2,7 +2,8 @@ let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 let modalContainer = document.querySelector('#modal-container');
-    
+let input = $('input');
+input.on('input', filterList);  
   
     function add(pokemon) {
       if (
@@ -75,6 +76,20 @@ let modalContainer = document.querySelector('#modal-container');
       
     }
   
+    function filterList() {
+      let inputValue = $('input').val();
+      let list = $('li');
+      list.each(function () {
+        let item = $(this);
+        let name = item.text();
+        if (name.startsWith(inputValue)) {
+          item.show();
+        } else {
+          item.hide();
+        }
+      });
+    }
+
 //Modal exercise 
 
     function showModal(pokemon) {
@@ -82,7 +97,6 @@ let modalContainer = document.querySelector('#modal-container');
       
       let modalBody = $(".modal-body");
       let modalTitle = $(".modal-title");
-      let modalHeader = $(".modal-header");
       modalTitle.empty();
       modalBody.empty();
 
@@ -135,6 +149,7 @@ const types = xs.join(" - ");
       addListItem: addListItem,
       loadList: loadList,
       loadDetails: loadDetails,
+      filterList: filterList,
     }
     
 })();
