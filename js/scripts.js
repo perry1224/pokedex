@@ -150,6 +150,8 @@ const types = xs.join(" - ");
       loadList: loadList,
       loadDetails: loadDetails,
       filterList: filterList,
+      
+  
     }
     
 })();
